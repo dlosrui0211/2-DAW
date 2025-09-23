@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 9</title>
+</head>
+<body>
+    <script>
+        let intentos = 0;
+
+        function NumeroAleatorio(){
+
+            numerorandom = Math.floor(Math.random() * 100) + 1;
+
+            console.log(numerorandom)
+
+            console.log("Juego inicializado");
+
+            return numerorandom;
+        }
+    
+        function AdivinarNumero(){
+            intentos ++;
+            limInf=1;
+            limSup=100;
+            let numerorandom=NumeroAleatorio();
+            let num = 0;
+
+            
+            num=prompt(`Introduzca número entre ${limInf} y ${limSup}`);
+
+            while (num!= numerorandom && intentos < 10){
+
+                if (num == numerorandom){
+                    console.log("Has adivinado el numero!!!");
+                    return;
+                }
+
+                if (num < numerorandom){
+                    console.log("El numero es mayor");
+                    limInf=num;
+                    intentos++
+                }
+
+                if (num > numerorandom) {
+                    console.log("El numero es menor");
+                    limSup=num;
+                    intentos++
+                }
+                console.log(numerorandom,limInf,limSup)
+                
+                num=prompt(`Introduzca número entre ${limInf} y ${limSup}`);
+
+            }
+
+            if (intentos > 10 ){
+                console.log ("has perdido");
+            }   
+            else{
+                console.log(`Has adivinado el numero!!, lo has hecho en ${intentos} intentos`)  
+            }
+            
+        }
+    </script>
+
+    <input type="button" value="Probar" onclick="AdivinarNumero()">
+
+</body>
+</html>

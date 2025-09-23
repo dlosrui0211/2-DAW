@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 8</title>
+</head>
+<body>
+    <script>
+        
+        let ven; // Si voy a utilizar una variable dentro de una funcion esa variable ya tiene que estar inicializada fuera de cualquier función
+
+        function MostrarVentana(){
+            ven = window.open("http://127.0.0.1:5500/prueba8.html","MiWindow", "popup");
+        }
+
+        // Esto lo que hace es ver si la ventana esta cerrada, sino estuviera pues se cierra, para eso utilizamos la variable que hemos utilizado antes para abrir la ventana anterior
+        function CerrarVentana(){
+            if (ven && !ven.closed){
+                ven.close()
+            }
+        }
+    </script>
+
+    <input type="button" value="Mostrar Pagina" onclick="MostrarVentana()">
+    <input type="button" value="Cerrar Pagina" onclick="CerrarVentana()">
+</body>
+</html>
