@@ -1,3 +1,0 @@
-console.log("Texto en consola");
-alert("Texto en ventana");
-document.write("Texto en documento");
