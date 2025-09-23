@@ -7,18 +7,30 @@
 </head>
 <body>
     <script>
-        function comprobarValor(numero){
-            if (typeof numero == "Number"){
-                console.log("El texto si es un numero")
+        
+        function comprobarValor(){
+
+            let valor= document.getElementById("num").value;
+
+            let numero = Number(valor);
+
+            if (isNaN(numero)){
+                alert("No es un numero");
             } else{
-                console.log("No es un numero")
+                alert("si es un numero");
             }
         }
     </script>
-    <!--Sin usar javascript que muestre una ventana al pulsar un botón con el texto “Mostrar texto”-->
-    <!--<input type="button" value="Mostrar" onclick="alert(name.value)">-->
-    <input type="text" id="texto">
-    <br>
-    <input type="button" value="Comprobar" onclick="comprobarValor(parseInt(id))">
+    
+
+    <input type="text" id="n">
+    <input type="button" value="Mostrar" onclick="alert(n.value)">
+
+    <br><br>
+     
+    <h3>2ª Parte, clic en el boton para que te salte el prompt</h3>
+
+    <input type="text" id="num">
+    <input type="button" value="Mostrar Si es Numero o no" onclick="comprobarValor()"> 
 </body>
 </html>
