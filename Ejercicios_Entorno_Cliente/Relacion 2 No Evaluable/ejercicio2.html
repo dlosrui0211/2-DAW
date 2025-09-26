@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="num">
+
+    <input type="button" value="Ingresar Numero" onclick="ingresar_numero()">
+    <input type="button" value="Mostrar Array" onclick="mostrar_array()">
+    <input type="button" value="Suma" onclick="sumatodo()">
+    <p id="parr"></p>
+    <script>
+
+        array_num= [];
+        var parrafo=document.getElementById("parr")
+        
+        function ingresar_numero(){
+            if (array_num.length < 10 ){
+                var numcog = document.getElementById("num").value;
+                array_num.push(numcog);
+                parrafo.innerHTML = array_num;
+            } else{
+                parrafo.innerHTML="No se pueden colocar mas números";
+            }
+        }
+
+        function mostrar_array(){          
+            parrafo.innerHTML = array_num;
+        }
+
+
+        function sumatodo(){
+            for (j = 0; j < array_num; j++){
+                
+            }
+        }
+    </script>
+</body>
+</html>
