@@ -11,18 +11,19 @@
 
     <input type="button" value="Ingresar Numero" onclick="ingresar_numero()">
     <input type="button" value="Mostrar Array" onclick="mostrar_array()">
-    <input type="button" value="Suma" onclick="sumatodo()">
+    <input type="button" value="Sumar toda la array" onclick="sumatodo()">
     <p id="parr"></p>
     <script>
-
+        
         array_num= [];
         var parrafo=document.getElementById("parr")
+        let suma = 0
         
         function ingresar_numero(){
             if (array_num.length < 10 ){
                 var numcog = document.getElementById("num").value;
-                array_num.push(numcog);
-                parrafo.innerHTML = array_num;
+                array_num.push(Number(numcog));
+                console.log("Se ingresan");
             } else{
                 parrafo.innerHTML="No se pueden colocar mas números";
             }
@@ -32,11 +33,12 @@
             parrafo.innerHTML = array_num;
         }
 
-
         function sumatodo(){
-            for (j = 0; j < array_num; j++){
-                
+            for (j = 0; j < array_num.length; j++){
+                console.log("Esta dentro del bucle");
+                suma = suma + array_num[j];
             }
+            parrafo.innerHTML= "La suma del array es: " + suma;
         }
     </script>
 </body>

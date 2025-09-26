@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="num">
+    <input type="button" value="Insertar Multiplo" onclick="InsertarMultiplo()">
+    <input type="button" value="Mostrar Array" onclick="MostrarArray()">
+    <input type="button" value="Sumar todo" onclick="sumatodo()">
+    <p id="parr"></p>
+    <p id="resultado"></p>
+    <script>
+
+        array_num=[];
+        var parrafo = document.getElementById("parr")
+        var resul = document.getElementById("resultado")
+        let suma= 0;
+        
+        function InsertarMultiplo(){
+            let numero = Number(document.getElementById("num").value);
+            if (numero % 11 == 0 && numero < 3000){
+                console.log("Es multiplo de 11");
+            } else{
+                console.log("No es multiplo de 11");
+                parrafo.innerHTML="Se pasa de 3000, tiene que ser menor de 3000";
+                return
+            }
+            
+            if (array_num.length < 10){
+                array_num.push(numero);
+                console.log("Se han metido en la array correctamente");
+                parrafo.innerHTML= `Te quedan unos ${10-array_num.length} intentos`;
+            } else {
+                parrafo.innerHTML="No se pueden ingresar mas numeros";
+            }
+        }
+
+        function MostrarArray(){
+            parrafo.innerHTML = array_num;
+        }
+
+        function sumatodo(){
+            for (j = 0; j < array_num.length; j++){
+                suma += array_num[j];
+            }
+            resul.innerHTML = "La suma de todos los multiplos de 11 es: "+ suma;
+        }
+    </script>
+</body>
+</html>
