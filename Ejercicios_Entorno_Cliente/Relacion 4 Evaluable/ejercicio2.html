@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="text" id="texto">
+        <input type="text" id="palabraAencontrar">
+        <p id="resultado"></p>
+        <input type="button" name="enviar" value="enviar" onclick="Encontrarpalabra()" >
+
+    <script>
+        
+        
+        let Encontrarpalabra=()=>{
+            texto=document.getElementById("texto").value;
+            palabraAencontrar=document.getElementById("palabraAencontrar").value;
+            resultado=document.getElementById("resultado");
+            contador=0;
+            let posicion= texto.indexOf(palabraAencontrar,0)
+            while(posicion !== -1){
+                contador++
+                nuevaposicion=posicion+palabraAencontrar.length
+                posicion=texto.indexOf(palabraAencontrar,nuevaposicion)
+            }
+            resultado.innerHTML="La palabra se ha encontrado un total de "+contador+" veces";
+        };
+    </script>
+</body>
+</html>

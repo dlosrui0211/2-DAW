@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fecha = new Date();
+        let dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+        let meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+        mesActual= Math.floor(fecha.getMonth() + 1);
+        let cuatrimestre = Math.ceil(mesActual/4);
+
+        console.log(`Estamos en el dia ${dias[fecha.getDate()]} del mes de ${meses[fecha.getMonth()]} del ${cuatrimestre}º cuatrimestre del año ${fecha.getFullYear()}`)
+    </script>
+</body>
+</html>

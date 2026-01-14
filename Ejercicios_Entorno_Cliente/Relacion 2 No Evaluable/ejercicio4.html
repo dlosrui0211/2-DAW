@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parr1"></p>
+    <p id="parr2"></p>
+    <p id="parr3"></p>
+    <p id="parr4"></p>
+    <p id="parr5"></p>
+    <script>
+        var array = [6,"pepe", 2, "juan"];
+        var parrafo1 = document.getElementById("parr1");
+        var parrafo2 = document.getElementById("parr2");
+        var parrafo3 = document.getElementById("parr3");
+        var parrafo4 = document.getElementById("parr4");
+        var parrafo5 = document.getElementById("parr5");
+        let str1 = array[1];
+        let str2 = array[3];
+        let num1 = array[0];
+        let num2 = array[2];
+
+        if (str1 > str2){
+            parrafo1.innerHTML= "El string mas mayor es " + str1;
+        } else {
+            parrafo1.innerHTML= "El string mas mayor es " + str2;
+        }
+
+        parrafo2.innerHTML = "Suma: "+(num1+num2);
+        parrafo3.innerHTML = "Resta: "+ (num1-num2);
+        parrafo4.innerHTML = "Multiplicación: "+num1*num2;
+        parrafo5.innerHTML = "Division: "+num1/num2;
+
+    </script>
+</body>
+</html>

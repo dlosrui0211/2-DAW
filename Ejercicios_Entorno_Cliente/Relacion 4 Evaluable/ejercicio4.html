@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="capicua">
+    <input type="submit" value="Mostrar si es capicua" onclick="Escapicua()">
+    <p id="resultado"></p>
+    <script>
+        let Escapicua=()=>{
+            capicua=document.getElementById("capicua").value;
+            resultado=document.getElementById("resultado");
+            let numerostring= capicua.toString();
+
+            let numeroinvertido = numerostring.split('').reverse().join('');
+
+            if (numeroinvertido === numerostring){
+                resultado.innerHTML="El numero "+numerostring+" si es capicua";
+            } else {
+                resultado.innerHTML="El numero "+numerostring+" no es capicua";
+            }
+        }
+
+    </script>
+</body>
+</html>

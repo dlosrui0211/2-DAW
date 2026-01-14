@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Empresa{
+            constructor(nombre, direccion, telefono, nif){
+                this.nombre = nombre;
+                this.direccion = direccion;
+                this.telefono = telefono;
+                this.nif = nif;
+            }
+
+
+            mostrartodo(){
+                console.log("Este es el nombre de la empresa: "+this.nombre);
+                console.log("Esta es la direccion de la empresa: "+this.direccion);
+                console.log("Esto es el telefono de la empresa: "+this.telefono);
+                console.log("Esto es el nif de la empresa: "+this.nif);
+            }
+        }
+
+        class Cliente{
+            constructor(nºcliente, dni, nombre, domicilio, cp, ciudad, provincia){
+                this.nºcliente=nºcliente;
+                this.dni=dni;
+                this.nombre=nombre;
+                this.domicilio=domicilio;
+                this.cp=cp;
+                this.ciudad=ciudad;
+                this.provincia=provincia;
+            }
+
+            mostrartodo(){
+                console.log("Este es el nº del cliente: "+this.nºcliente);
+                console.log("Este es el nombre del cliente: "+this.nombre);
+                console.log("Esta es el domicilio del cliente: "+this.domicilio);
+                console.log("Esto es el dni del cliente: "+this.dni);
+                console.log("Esto es el cp del cliente: "+this.cp);
+                console.log("Esto es el ciudad del cliente: "+this.ciudad);
+                console.log("Esto es el provincia del cliente: "+this.provincia);
+            }
+        }
+
+        class Productos{
+            constructor(descripcion, precio, cantidad){
+                this.descripcion=descripcion;
+                this.precio=precio;
+                this.cantidad=cantidad;
+            }
+        }
+
+        class DatosFactura{
+            constructor(Empresa, Cliente){
+                this.Empresa=Empresa;
+                this.Cliente=Cliente;
+            }
+        }
+
+        class Factura extends DatosFactura{
+            constructor(Empresa, Cliente, importeTotal, formapago){
+                super(Empresa,Cliente);
+                this.importeTotal=importeTotal;
+                this.formapago=formapago;
+            }
+        
+            total(Productos){
+                let todo=0;
+                let subtotal=0;
+                console.log("<-------------------------->")
+                console.log("Esto son los precios ->");
+                for(let i=0; i<Productos.length; i++){
+                    subtotal = Productos[i].precio*Productos[i].cantidad;
+                    console.log(Productos[i].descripcion+" - "+subtotal+"€")
+                    todo += subtotal;
+                }
+                this.importetotal = todo;
+                console.log("El total es de todos los productos es: "+this.importetotal+"€");
+            }
+        }
+
+        let empresa1 = new Empresa("IES Marques de Comares", "Calle juego de pelota", 957876532, 147900);
+        let cliente1 = new Cliente(2, 51218891, "Daniel", "Barriada los palos", 14900, "Lucena", "Cordoba");
+        let factura = new Factura(empresa1, cliente1, 0, "Contado");
+        let listaproductos = [
+            new Productos("Raton Inalambrico", 10, 1),
+            new Productos("Teclado", 30, 1),
+            new Productos("Cascos innalambricos", 60, 2)
+        ];
+
+        console.log("DATOS DE LA EMPRESA")
+        empresa1.mostrartodo();
+        console.log("<--------------------------------->");
+        console.log("DATOS DEL CLIENTE")
+        cliente1.mostrartodo();
+        factura.total(listaproductos);
+        
+    </script>
+</body>
+</html>

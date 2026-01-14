@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Cuadrado{
+
+            constructor(lado){
+                this.lado = lado;
+            }
+            
+            sumar(){
+                console.log("Suma de los lados del cuadrado: "+(this.lado + this.lado));
+            }
+
+            area(){
+                console.log("Area del cuadrado: "+this.lado*this.lado);
+            }
+        }
+        class Cubo extends Cuadrado{
+            constructor(lado, largo, ancho, alto){
+                super(lado);
+                this.largo = largo;
+                this.ancho = ancho;
+                this.alto = alto;
+            }
+
+            perimetro(){
+                console.log("Perimetro del cubo: "+4*this.lado);
+            }
+
+            areacubo(){
+                console.log("Area del cubo: "+6*(this.lado*this.lado));
+            }
+
+            volumen(){
+                console.log("Volumen del cubo: "+this.largo*this.ancho*this.alto);
+            }
+        }
+
+        let lado = Number(prompt("Introduceme el numero de lados de un cuadrado"));
+        let ladocubo = Number(prompt("Introduceme el numero de aristas de un cubo"));
+        let ancho = Number(prompt("Dime el ancho del cuadrado"));
+        let largo = Number(prompt("Dime el largo del cuadrado"));
+        let alto = Number(prompt("Dime el alto del cuadrado"));
+
+
+        let cuadrado = new Cuadrado(lado);
+        let cubo = new Cubo(ladocubo, ancho, largo, alto);
+
+        cuadrado.sumar();
+        cuadrado.area();
+        cubo.perimetro();
+        cubo.areacubo();
+        cubo.volumen();
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        #cartel-seguidor{
+            background-color: yellow;
+            color: black;
+            position: fixed;
+        }
+    </style>
+    <div id="cartel-seguidor">Aqui esta el cursor</div>
+    <script>
+        var cartel = document.getElementById('cartel-seguidor');
+
+        function moverCartel(movermouse){
+            let x = movermouse.clientX;
+            let y = movermouse.clientY;
+
+            cartel.style.transform = `translate(${x+15}px,${y + 15}px)`;
+
+        }
+
+        document.addEventListener('mousemove',moverCartel);                                                                
+        
+
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Aleatoria</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background 1s ease;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .texto-container {
+            background-color: white;
+            padding: 40px 60px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        #cuadroTexto {
+            font-size: 18px;
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            text-align: center;
+            min-width: 350px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #cuadroTexto:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="texto-container">
+        <input 
+            type="text" 
+            id="cuadroTexto" 
+            value="Situarse en el cuadro para insertar imagen"
+            readonly
+        >
+    </div>
+
+    <script>
+        const cuadro = document.getElementById('cuadroTexto');
+        const body = document.body;
+
+        function cambiarFondo() {
+            const timestamp = new Date().getTime();
+            const imageUrl = `https://source.unsplash.com/random?${timestamp}`;
+            body.style.backgroundImage = `url('${imageUrl}')`;
+        }
+        cuadro.addEventListener('click', cambiarFondo);
+    </script>
+</body>
+</html>

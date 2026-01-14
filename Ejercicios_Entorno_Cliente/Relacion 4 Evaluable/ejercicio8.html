@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="arraynumeros1">
+    <input type="number" id="arraynumeros2">
+    <input type="number" id="arraynumeros3">
+    <p id="mostrar"></p>
+    <p id="resultado"></p>
+    <p id="resultado2"></p>
+    <input type="submit" value="Mostrar" onclick="ParesEimpares()">
+
+    <script>
+
+        let ParesEimpares=()=>{
+            let numero1=parseInt(document.getElementById("arraynumeros1").value);
+            let numero2=parseInt(document.getElementById("arraynumeros2").value);
+            let numero3=parseInt(document.getElementById("arraynumeros3").value);
+            let mostrar=document.getElementById("mostrar");
+            let resultado=document.getElementById("resultado");
+            let resultado2=document.getElementById("resultado2");
+
+            const miarray=[numero1,numero2,numero3];
+            let arraypares=[];
+            let arrayimpares=[];
+
+            for(i=0; i < miarray.length; i++){
+                numero=miarray[i];
+
+                if(numero % 2 == 0){
+                    arraypares.push(numero);
+
+                } else{
+                    arrayimpares.push(numero);
+                }
+            }
+            mostrar.innerHTML="Esta es la array de los numeros: "+miarray;
+            resultado.innerHTML="Estos son los numeros pares: "+arraypares;
+            resultado2.innerHTML="Estos son los numeros impares: "+arrayimpares;
+        }
+    </script>
+</body>
+</html>

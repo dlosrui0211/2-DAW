@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num"><br><br>
+    <input type="button" value="Calcular letra" onclick="CalcularLetra()"><br><br>
+    <input type="text" id="num2"><br><br>
+    <input type="button" value="Verificar DNI" onclick="DNI_Correcto()">
+    <p id="parr"></p>
+    <p id="parr2"></p>
+    <script>
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+        var parrafo = document.getElementById("parr");
+        var parrafo1 = document.getElementById("parr2");
+        
+        function CalcularLetra(){
+            let numero = document.getElementById("num").value;
+            indice = numero % 23;
+            parrafo.innerHTML= "La letra es: " + letras[indice];
+        }
+
+        function DNI_Correcto(){
+            let numero2 = document.getElementById("num2").value;
+            letra= numero2[numero2.length - 1];
+            Numeros= numero2.slice(0,numero2.length -1);
+            num=parseInt(Numeros);
+
+            indice= num % 23;
+            if(letras[indice] == letra){
+                parrafo1.innerHTML= "Es letra correcta";
+            } else {
+                parrafo1.innerHTML= "Letra incorrecta, vuelva a intentarlo";
+            }
+        } 
+    </script>
+</body>
+</html>

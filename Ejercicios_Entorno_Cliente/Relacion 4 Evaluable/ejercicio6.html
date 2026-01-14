@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="palabra">
+    <p id="resultado"></p>
+    <input type="submit" value="Mostrar" onclick="vocalesYconsonantes()">
+    <script>
+
+        let vocalesYconsonantes=()=>{
+            let palabraminuscula=document.getElementById("palabra").value;
+            let resultado=document.getElementById("resultado");
+            let listavocales="aeiouáéíóú";
+            let contadorVocales=0;
+            let contadorConsonantes=0;
+            palabraminuscula = palabraminuscula.toLowerCase();
+
+            for(let i=0; i<palabraminuscula.length; i++){
+                const caracter = palabraminuscula[i];
+            
+
+                if (caracter >= 'a' && caracter <= 'z'){
+                    if(listavocales.includes(caracter)){
+                        contadorVocales++
+                    } else {
+                        contadorConsonantes++
+                    }
+                }
+            }
+            resultado.innerHTML="La palabra contiene "+contadorVocales+" vocales y "+contadorConsonantes+" consonantes";
+        }
+    </script>
+</body>
+</html>

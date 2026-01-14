@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="arraynumeros1">
+    <input type="number" id="arraynumeros2">
+    <input type="number" id="arraynumeros3">
+    <p id="mostrar"></p>
+    <p id="resultado"></p>
+    <input type="submit" value="Mostrar" onclick="CalcularMayorYmenor()">
+    <script>
+
+        let CalcularMayorYmenor=()=>{
+            let numero1=parseInt(document.getElementById("arraynumeros1").value);
+            let numero2=parseInt(document.getElementById("arraynumeros2").value);
+            let numero3=parseInt(document.getElementById("arraynumeros3").value);
+            let resultado=document.getElementById("resultado")
+            let mostrar=document.getElementById("mostrar")
+            const miarray=[numero1,numero2,numero3];
+            mostrar.innerHTML=miarray;
+
+            let maximo=Math.max(...miarray);
+            let minimo=Math.min(...miarray);
+
+            resultado.innerHTML="Maximo: "+maximo+" y minimo "+minimo;
+        }
+    </script>
+</body>
+</html>

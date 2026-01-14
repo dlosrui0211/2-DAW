@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const map = new Map([
+        [1, "Enero"],
+        [2, "Febrero"],
+        [3, "Marzo"],
+        [4, "Abril"],
+        [5, "Mayo"],
+        [6, "Junio"],
+        [7, "Julio"],
+        [8, "Agosto"],
+        [9, "Septiembre"],
+        [10, "Octubre"],
+        [11, "Noviembre"],
+        [12, "Diciembre"]
+        ]);
+        console.log(map.size);
+
+        console.log(map.delete(5));
+        console.log("Mostrando una vez esta eliminado mayo: ",map);
+
+        map.set(13,"NuevoMes");
+        console.log("Añadiendo nuevo mes llamado: ",map);
+        
+        console.log("¿Existe mayo? ",map.has(5));
+        console.log("¿Existe Junio? ",map.has(6));
+
+        const arraymeses = [...map];
+        console.log("Convertimos el map en array ",arraymeses);
+
+
+        arr = arraymeses.filter(([clave, valor]) => valor !== "Enero");
+        console.log("Eliminamos el mes de enero y mostrando la array entera ",arr);
+
+
+
+    </script>
+</body>
+
+</html>

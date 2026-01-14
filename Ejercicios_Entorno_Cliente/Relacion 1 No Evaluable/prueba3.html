@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport", initial-scale=1.0>
+    <title>prueba 3</title>
+</head>
+<body>
+    <script>
+        function ComprobarTriangulo(l1, l2, l3, an1, an2, an3) {
+
+            if (l1 <= 0 || l2 <= 0 || l3 <= 0 || an1 <= 0 || an2 <= 0 || an3 <= 0){
+
+                console.log("Los lados deben de ser mayores de 0")
+            }
+            
+            if ((an1 + an2 + an3) === 180){
+
+                if ((l1 + l2 <= l3 || l1 + l3 <= l2 || l2 + l3 <= l1 )){
+
+                    console.log("No es un triangulo")
+                }
+
+                if ((an1 == 90 || an2 == 90 || an3 == 90)){
+                    console.log("Es un triangulo rectangulo")
+                } else if ((l1 == l2 && l1==l3)){
+                    console.log("Es un triangulo equilatero")
+                } else if ((l1 == l2 || l1==l3 || l2 == l3)){
+                    console.log("Es un triangulo isosceles")
+                } else {
+                    console.log("Es un triangulo escaleno")
+                }
+            
+            }
+            
+        }
+    </script>
+
+    Introduzca Longitud del lado 1
+    <input type="Number" id="l1">
+    <br><br>
+    Introduzca Longitud del lado 2
+    <input type="Number" id="l2">
+    <br><br>
+    Introduzca Longitud del lado 3
+    <input type="Number" id="l3">
+    <br><br>
+    Introduzca Longitud del angulo 1
+    <input type="Number" id="an1">
+    <br><br>
+    Introduzca Longitud del angulo 2
+    <input type="Number" id="an2">
+    <br><br>
+    Introduzca Longitud del angulo 3
+    <input type="Number" id="an3">
+    <br><br>
+    <input type="button" value="Comprobar" onclick="ComprobarTriangulo(parseInt(l1.value),parseInt(l2.value),parseInt(l3.value),parseInt(an1.value),parseInt(an2.value),parseInt(an3.value))"> 
+</body>
+</html>

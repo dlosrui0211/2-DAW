@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <input type="text" id="palabraeliminada">
+    <p id="resultado"></p>
+    <input type="submit" value="Eliminar" onclick="Eliminarpalabra()">
+    <script>
+
+        let Eliminarpalabra=()=>{
+            texto=document.getElementById("texto").value;
+            palabraeliminada=document.getElementById("palabraeliminada").value;
+            resultado=document.getElementById("resultado");
+
+            nuevotexto=texto.replace(palabraeliminada, "");
+
+            resultado.innerHTML=nuevotexto;
+        }
+        
+    </script>
+</body>
+</html>

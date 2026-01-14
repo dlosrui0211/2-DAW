@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="palindromo">
+    <input type="button" value="Si es Palindromo o no" onclick="Espalindromo()">
+    <p id="parr"></p>
+    <script>
+        var parrafo = document.getElementById("parr");
+        
+        function Espalindromo(){
+            let palindromo = document.getElementById("palindromo").value;
+            let i;
+            invertida = ""
+            for (i = palindromo.length - 1; i>=0; i--){
+                invertida = invertida + palindromo[i];
+            }
+            if (palindromo == invertida){
+                parrafo.innerHTML= palindromo+" es palindromo";
+            } else {
+                parrafo.innerHTML= palindromo+" no es palindromo";
+            }
+        }
+    </script>
+</body>
+</html>

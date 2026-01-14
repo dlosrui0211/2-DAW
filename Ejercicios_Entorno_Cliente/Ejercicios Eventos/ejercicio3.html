@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Dinámica</title>
+</head>
+<body>
+
+    <ol id="lista">
+        <li>Párrafo 1.</li>
+        <li>Párrafo 2.</li>
+        <li>Párrafo 3.</li>
+        <li>Párrafo 4.</li>
+        <li>Párrafo 5.</li>
+        <li>Párrafo 6.</li>
+        <li>Párrafo 7.</li>
+        <li>Párrafo 8.</li>
+        <li>Párrafo 9.</li>
+    </ol>
+
+    <h3>Insertar Párrafo (Apartado C)</h3>
+    <input type="text" id="contenidoP" placeholder="Contenido">
+    <input type="number" id="posicionN" min="1" max="10">
+    <button id="btnInsertar">Insertar</button>
+    <button id="btnCancelar">Cancelar</button>
+
+    <h3>Eliminar Párrafo (Apartado D)</h3>
+    <input type="number" id="posicionEliminar" placeholder="Nº a Eliminar" min="1">
+    <button id="btnEliminar">Eliminar</button>
+
+    <script>
+        const listaOL = document.getElementById('lista');
+        const contenidoInput = document.getElementById('contenidoP');
+        const posicionInput = document.getElementById('posicionN');
+        const btnInsertar = document.getElementById('btnInsertar');
+        const btnCancelar = document.getElementById('btnCancelar');
+        const posicionEliminarInput = document.getElementById('posicionEliminar');
+        const btnEliminar = document.getElementById('btnEliminar');
+
+        function validarPosicion(posicionStr) {
+            const posicion = parseInt(posicionStr);
+            if (isNaN(posicion) || posicion < 1 || posicion > 10) return false;
+            return posicion;
+        }
+
+        function insertarParrafo(contenido, posicion) {
+            const li = document.createElement('li');
+            li.textContent = contenido;
+            
+            if (posicion > listaOL.children.length) {
+                listaOL.appendChild(li);
+            } else {
+                listaOL.insertBefore(li, listaOL.children[posicion - 1]);
+            }
+        }
+
+        function resetearCampos() {
+            contenidoInput.value = '';
+            posicionInput.value = (listaOL.children.length + 1).toString();
+        }
+
+        btnInsertar.addEventListener('click', () => {
+            const contenido = contenidoInput.value.trim();
+            const posicion = validarPosicion(posicionInput.value);
+
+            if (!contenido || !posicion) {
+                alert("ERROR: Contenido o posición (1-10) inválidos.");
+                return;
+            }
+
+            insertarParrafo(contenido, posicion);
+            
+            contenidoInput.value = '';
+            posicionInput.value = (parseInt(posicionInput.value) + 1).toString();
+        });
+
+
+        btnCancelar.addEventListener('click', resetearCampos);
+        
+        resetearCampos();
+
+        btnEliminar.addEventListener('click', () => {
+            const posicion = parseInt(posicionEliminarInput.value);
+            const numParrafos = listaOL.children.length;
+
+            if (isNaN(posicion) || posicion < 1 || posicion > numParrafos) {
+                alert(`ERROR: Introduzca un número entre 1 y ${numParrafos} para eliminar.`);
+                return;
+            }
+            
+            const elementoAEliminar = listaOL.children[posicion - 1];
+            listaOL.removeChild(elementoAEliminar);
+            
+            posicionEliminarInput.value = '';
+        });
+    </script>
+</body>
+</html>

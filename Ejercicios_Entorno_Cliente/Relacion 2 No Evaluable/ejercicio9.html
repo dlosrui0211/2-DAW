@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const set = new Set([
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"
+        ]);
+        console.log(set.size);
+
+        console.log(set.delete("Mayo"));
+        console.log("Mostrando una vez esta eliminado mayo: ",set);
+
+        set.add("NuevoMes");
+        console.log("Añadiendo nuevo mes llamado: ",set);
+        
+        console.log("¿Existe mayo? ",set.has("Mayo"));
+        console.log("¿Existe Junio? ",set.has("Junio"));
+
+        let arraymeses = [...set];
+        console.log("Convertimos el set en array ",arraymeses);
+
+
+        let arr = arraymeses.filter(mes => mes !== "Enero");
+        arraymeses = arr;
+        console.log("Eliminamos el mes de enero y mostrando la array entera ",arr);
+        
+
+
+    </script>
+</body>
+</html>

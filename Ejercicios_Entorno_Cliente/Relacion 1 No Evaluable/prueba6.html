@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 6</title>
+</head>
+<body>
+    <script>
+        function MostrarTabla(tabla){
+            if (tabla < 2 || tabla > 9){
+                console.log("Tiene que ser un numero dentro del rango 2 - 9 ")
+            }else{
+                document.write(tabla + " x 1 = " + tabla*1 + "<br>");
+                document.write(tabla + " x 2 = " + tabla*2 + "<br>");
+                document.write(tabla + " x 3 = " + tabla*3 + "<br>");
+                document.write(tabla + " x 4 = " + tabla*4 + "<br>");
+                document.write(tabla + " x 5 = " + tabla*5 + "<br>");
+                document.write(tabla + " x 6 = " + tabla*6 + "<br>");
+                document.write(tabla + " x 7 = " + tabla*7 + "<br>");
+                document.write(tabla + " x 8 = " + tabla*8 + "<br>");
+                document.write(tabla + " x 9 = " + tabla*9 + "<br>");
+                document.write(tabla + " x 10 = " + tabla*10 + "<br>"); 
+            }
+        }
+
+    </script>
+
+    Introduzca un numero del 2 al 9
+    <input type="text" id="tabla">
+    <br><br>
+    <input type="button" value="mostrar" onclick="MostrarTabla(tabla.value)">
+</body>
+</html>

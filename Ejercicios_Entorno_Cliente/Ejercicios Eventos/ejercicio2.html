@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function buscarpalabra(){
+            var palabra = document.getElementById('palabra').value.trim();
+            var texto_largo = document.getElementById('texto');
+            var parrafo = document.getElementById('parrafo');
+    
+            var regex= new RegExp(palabra,'g');
+            let contador = 0;
+
+            texto_largo.innerHTML = texto_largo.innerHTML.replace(regex, (palabra) => {
+                contador ++;
+                return  `<mark>${palabra}</mark>`;
+            })
+
+            if(contador === 0){
+                alert(`No se encontró ${palabra} .`);
+            } else {
+                parrafo.innerHTML= `Se ha encontrado la palabra ${contador} veces.`;
+            }
+        }
+
+
+    </script>
+
+    <p id="texto">
+        Lorem quasi ipsum dolor sit amet consectetur adipisicing elit. Deserunt repudiandae iure corrupti neque in natus. 
+        Soluta hic ipsa vel excepturi quasi, 
+        explicabo officia fugiat libero eos rerum quasi. Ut reprehenderit quo, 
+        dignissimos temporibus consequatur expedita recusandae molestias magni unde at laboriosam?
+    </p>
+
+    <p id="parrafo"></p>
+
+    <input type="text" id="palabra" placeholder="Escribir palabra a buscar">
+
+    <button onclick="buscarpalabra()">Buscar</button>
+
+</body>
+</html>

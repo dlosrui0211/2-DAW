@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <form name="formulario" action="">
+        Nombre: <input type="text" name="nombre">
+        <ul>
+            <li style="list-style-type: none;">
+                <input type="radio" name="sexo" value="Hombre">Hombre <br>
+                <input type="radio" name="sexo" value="mujer">Mujer
+            </li>
+        </ul>
+        <input type="submit" name="enviar" value="Enviar">
+    </form>
+
+    <script>
+        document.forms['formulario'].addEventListener('submit', function(evento){
+
+            let nombre = document.forms['formulario']['nombre'].value;
+            let radios = document.getElementsByName('sexo');
+            let enviar = document.getElementsByName('enviar');
+            let algunomarcado = false;
+            let errores = [];
+            
+            // Aqui comprueba de que si nombre esta vacio que ponga ese mensaje
+            if (nombre.trim() === ''){
+                errores.push("- El nombre no puede estar en blanco");
+            }
+
+            // hace un bucle para mantener marcado la opcion y ponemos como que se ha marcado uno en true
+            for(let i = 0; i < radios.length; i++) {
+                if (radios[i].checked){
+                    algunomarcado = true;
+                    break
+                }
+            }
+            // si no se ha marcado ninguno lo añadimos a la array
+            if(!algunomarcado){
+                errores.push("- Debes seleccionar un sexo");
+            }
+
+            // esto verifica si tiene errores y si los tiene que los muestre
+            if(errores.length > 0){
+                alert(errores.join("\n\n"));
+                evento.preventDefault();
+                return;
+            }
+
+            // Una vez esta todo validado nos muestra el mensaje de que se ha enviado
+            alert("Todo el formulario se ha enviado correctamente");
+            
+        })
+    </script>
+</body>
+</html>

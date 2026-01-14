@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="cadena">
+    <input type="button" value="Mostrar" onclick="obtenermayusOminus()">
+    <p id="parr"></p> 
+    <script>
+
+        let parrafo= document.getElementById("parr");
+        function obtenermayusOminus(){
+            let cadena= document.getElementById("cadena").value;
+            if (cadena === cadena.toUpperCase()){
+                parrafo.innerHTML= "La cadena de texto esta toda en mayuscula";
+            } else if (cadena === cadena.toLowerCase()){
+                parrafo.innerHTML= "La cadena de texto esta toda en minuscula";
+            } else {
+                parrafo.innerHTML="La cadena de texto lleva ambos"
+            }
+        }
+
+
+    </script>
+</body>
+</html>

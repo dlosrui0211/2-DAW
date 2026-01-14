@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parr"></p>
+    <p id="numero"></p>
+    <input type="button" value="Calcular Menor" onclick="CalcularMenor()">
+    <script>
+        var parrafo = document.getElementById("parr");
+        var array_num = document.getElementById("numero");
+        var numeros = [5,10,4];
+
+        array_num.innerHTML=numeros;
+
+        function CalcularMenor(){
+            if (numeros[0] < numeros[1] && numeros[0] < numeros[2]){
+                parrafo.innerHTML= "El menor es "+ numeros[0];
+            } else if (numeros[1] < numeros[0] && numeros[1] < numeros [2]){
+                parrafo.innerHTML= "El menor es " + numeros[1];
+            } else {
+                parrafo.innerHTML= "El menor es " + numeros[2];
+            }
+        }
+    </script>
+</body>
+</html>
